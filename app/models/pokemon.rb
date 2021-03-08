@@ -1,4 +1,4 @@
 class Pokemon < ApplicationRecord
-    has_many: pokedexes
-    has_many: users, through: :pokedexes
+    has_many :pokedexes
+    has_many :users, through: :pokedexes
 end
