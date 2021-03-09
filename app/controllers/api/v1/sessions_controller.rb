@@ -23,4 +23,17 @@ class Api::V1::SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.delete :user_id
+    if !session[:user_id]
+      render json: {
+        notice: "successfully logged out"
+      }, status: :ok
+    else
+      render json: {
+        error: "Unsuccessful log out"
+      }
+    end
+  end
+
 end
