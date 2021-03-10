@@ -12,6 +12,7 @@ meks = User.create(username: "Meks", password: "password")
 bulbasaur = Pokemon.create(name: "bulbasaur", p_id: 1)
 ivysaur = Pokemon.create(name: "ivysaur", p_id: 2)
 venusaur = Pokemon.create(name: "venusaur", p_id: 3)
+charmander = Pokemon.create(name: "charmander", p_id: 4)
 
 
 jordan.pokemons << bulbasaur
@@ -19,3 +20,6 @@ jordan.pokemons << ivysaur
 
 meks.pokemons << ivysaur
 meks.pokemons << venusaur
+
+pokedex = meks.pokedexes.build(pokemon_id: charmander.id)
+pokedex.save
