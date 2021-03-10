@@ -22,4 +22,14 @@ class Api::V1::PokedexesController < ApplicationController
     end
   end
 
+  def destroy
+    pokedex = Pokedex.find_by(id: params[:id])
+    if pokedex.destroy 
+      render json: current_user.pokemons
+    else
+      response = { error: "Could not delete"}
+      render json: response, status: :unprocessable_entity
+    end
+  end
+
 end
