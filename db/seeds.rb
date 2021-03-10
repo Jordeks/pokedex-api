@@ -13,11 +13,9 @@ bulbasaur = Pokemon.create(name: "bulbasaur", p_id: 1)
 ivysaur = Pokemon.create(name: "ivysaur", p_id: 2)
 venusaur = Pokemon.create(name: "venusaur", p_id: 3)
 
-# instead let's try
-# jordan.pokemons << bulbasaur
-# jordan.pokemons << ivysaur
-jordan.pokedexes.create(pokemon_id: bulbasaur.id)
-jordan.pokedexes.create(pokemon_id: ivysaur.id)
 
-meks.pokedexes.create(pokemon_id: ivysaur.id)
-meks.pokedexes.create(pokemon_id: venusaur.id)
+jordan.pokemons << bulbasaur
+jordan.pokemons << ivysaur
+
+meks.pokemons << ivysaur
+meks.pokemons << venusaur
